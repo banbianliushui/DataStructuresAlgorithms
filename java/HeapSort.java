@@ -33,7 +33,7 @@ public class HeapSort {
 	 */
 	public static void heapsort(int[] arr) {
 		//先找到最后一个父节点，从它开始往上进行堆调整
-		for (int i = arr.length / 2; i >= 0; i--) {
+		for (int i = arr.length / 2 - 1; i >= 0; i--) {
 			adjustheap(arr, i, arr.length);
 		}
 		int len=arr.length;

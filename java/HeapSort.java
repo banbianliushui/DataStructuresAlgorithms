@@ -59,7 +59,7 @@ public class HeapSort {
 
 		int j = parent;
 		
-		while (j * 2 < len) {
+		while (j * 2 < len) {//2j是parent的左子节点，先比较左右两个子节点取两者中较小的然后和parent比较，再调整将最小的放到堆顶
 			int min = j * 2;
 			if (j * 2 + 1 < len && arr[j * 2] > arr[j * 2 + 1]) {
 				min = j * 2 + 1;

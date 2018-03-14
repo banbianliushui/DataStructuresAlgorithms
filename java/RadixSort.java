@@ -27,6 +27,8 @@ public class RadixSort {
 	 * 
 	 * 这里对于十进制数排序，需要一个二维数组分别存放某位上0~9对应的数据。
 	 * 还需要一个记录二维数组中放入数据的下标。
+	 
+	 最好的情况与最坏的情况在时间上是一致的，均为 O(d * (n + r))。
 	 * @param arr
 	 */
 	public static void radixsort(int [] arr){ 		

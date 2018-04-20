@@ -4,7 +4,7 @@ public class ShellSort {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int [] arr ={44,12,53,20,61,6,33,23,5};
+		int [] arr ={44,12,53,91,10,31,20,61,6,33,23,5};
 		shellsort(arr);
 		showarr(arr);
 	}
@@ -21,17 +21,45 @@ public class ShellSort {
 	 * @param arr
 	 */
 	public static void shellsort(int[] arr){
+		int testnum =0;
+		int movenum =0;
 		int gap = arr.length/2;
 		for(;gap>0;gap=gap/2){
-			for(int i = gap;i<arr.length;i=i+gap){
+			for(int i = gap;i<arr.length;i++){//i++  还是 i=i+gapn直接使用不符合希尔排序原理
 				int temp = arr[i];
 				int j = i;
 				while(j-gap>=0&&arr[j-gap]>temp){
 					arr[j]=arr[j-gap];
 					j=j-gap;
+					System.out.println("移动次数"+(++movenum));
 				}
+				System.out.println("赋值次数"+(++testnum));
 				arr[j]=temp;
 			}
+		}		
+		
+	}
+	
+	
+	public static void shellsort1(int[] arr){
+		int testnum =0;
+		int movenum =0;
+		int gap = arr.length/2;
+		for(;gap>0;gap=gap/2){
+			for(int step = 0;step<gap;step++){
+				for(int i = step+gap;i<arr.length;i=i+gap){//i++  还是 i=i+gap
+					int temp = arr[i];
+					int j = i;
+					while(j-gap>=0&&arr[j-gap]>temp){
+						arr[j]=arr[j-gap];
+						j=j-gap;
+						System.out.println("移动次数"+(++movenum));
+					}
+					System.out.println("赋值次数"+(++testnum));
+					arr[j]=temp;
+				}
+			}
+			
 		}
 		
 		
